@@ -33,8 +33,8 @@ def defModel():
     model.compile(optimizer=opt, loss='binary_crossentropy', metrics=['accuracy'])
     return model
     
-
-def summarize(history):
+#Summarise history for accuracy and loss
+def summarise(history):
     # plot loss
     pyplot.subplot(211)
     pyplot.title('Loss')
@@ -69,7 +69,7 @@ def main():
     _, acc = model.evaluate(test_it, steps=len(test_it), verbose=0)
     print ('> %.3f' % (acc * 100.0))
     #learnings curves
-    summarize(history)
+    summarise(history)
     # save model
     filename = sys.argv[0].split('/')[-1]
     model.save(filename + '_model.keras')
