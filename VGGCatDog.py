@@ -61,6 +61,9 @@ def main():
     print ('> %.3f' % (acc * 100.0))
     # summarize history for accuracy and loss
     summarise(history)
+    # save model
+    filename = sys.argv[0].split('/')[-1]
+    model.save(filename + '_model.keras')
 
 main()
 print("end")
