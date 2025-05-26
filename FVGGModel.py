@@ -28,7 +28,7 @@ def main():
     datagen = ImageDataGenerator(featurewise_center=True)
     datagen.mean = [123.68, 116.779, 103.939]  # VGG16 mean pixel values
     #prepare iterators
-    train_it = datagen.flow_from_directory('FdataCatDog/train/', target_size=(224, 224), class_mode='binary', batch_size=64)
+    train_it = datagen.flow_from_directory('FdataCatDog/', target_size=(224, 224), class_mode='binary', batch_size=64)
     # fit model
     history = model.fit(train_it, steps_per_epoch=len(train_it), epochs=10, verbose=1)
     # save model

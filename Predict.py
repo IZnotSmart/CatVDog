@@ -1,11 +1,11 @@
-from keras.preprocessing.image  import load_img
+from keras.preprocessing.image  import load_img as keras_load_img
 from keras.preprocessing.image import img_to_array
 from keras.models import load_model
 
 
 def load_img(filename):
     # Load the image with target size (224, 224)
-    img = load_img(filename, target_size=(224, 224))
+    img = keras_load_img(filename, target_size=(224, 224))
     # Convert the image to an array
     img = img_to_array(img)
     # Expand dimensions to match the model input shape
